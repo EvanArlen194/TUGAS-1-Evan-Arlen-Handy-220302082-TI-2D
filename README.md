@@ -212,7 +212,9 @@ LatihanCI4Evan/
 ### MVC
 Materi ke 5. MVC adalah sebuah pola arsitektur dalam membuat sebuah aplikasi dengan cara memisahkan kode menjadi tiga bagian yang terdiri dari Model, Views, dan Controller.
 ► Model : Tugas model adalah memelihara satu jenis data untuk aplikasi. Data ini bisa berupa pengguna, posting blog, transaksi, dll. Dalam hal ini, tugas model memiliki dua bagian: menerapkan aturan bisnis pada data yang diambil dari, atau dimasukkan ke dalam, basis data; dan menangani penyimpanan dan pengambilan data yang sebenarnya dari basis data.
+
 ► Views : File yang paling sederhana dan biasanya berupa HTML dengan jumlah PHP yang sangat sedikit. PHP yang sederhana, biasanya hanya menampilkan isi variabel, atau looping beberapa item dan menampilkan informasinya dalam sebuah tabel.
+
 ► Controller : Controller memiliki beberapa peran yang berbeda. Yang paling jelas adalah bahwa mereka menerima input dari pengguna dan kemudian menentukan apa yang harus dilakukan dengan input tersebut. Hal ini sering kali melibatkan pengoperan data ke model untuk menyimpannya, atau meminta data dari model yang kemudian diteruskan ke view yang akan ditampilkan. Hal ini juga termasuk memuat kelas utilitas lain, jika diperlukan, untuk menangani tugas-tugas khusus yang berada di luar lingkup model.
 
 Tanggung jawab lain dari controller adalah menangani segala sesuatu yang berhubungan dengan HTTP requests - redirects, authentication, web safety, encoding, dll. 
