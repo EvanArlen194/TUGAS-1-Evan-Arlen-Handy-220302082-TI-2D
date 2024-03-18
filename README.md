@@ -517,3 +517,79 @@ hp spark make:migration <class> [options]
 
 ### Materi ke 8 Database Seeding
 ■ Database Seeding adalah cara sederhana untuk menambahkan data ke dalam basis data Anda. Hal ini sangat berguna selama pengembangan di mana Anda perlu mengisi database dengan data sampel yang dapat Anda kembangkan, tetapi tidak terbatas pada hal itu.
+```bash
+<?php
+
+namespace App\Database\Seeds;
+
+use CodeIgniter\Database\Seeder;
+
+class KomikSeeder extends Seeder
+{
+    public function run()
+    {
+        $data = [
+            [
+                'judul' => 'Naruto',
+                'slugh' => 'naruto',
+                'penulis' => 'Masashi Kishimoto',
+                'penerbit' => 'Shonen Jump',
+                'sampul' => 'naruto.jpg',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'judul' => 'One Piece',
+                'slugh' => 'one-piece',
+                'penulis' => 'Eichiro Oda',
+                'penerbit' => 'Gramedia',
+                'sampul' => 'onepiece.jpg',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ]
+        ];
+
+        // Insert data
+        $this->db->table('komik')->insertBatch($data);
+    }
+}
+
+```
+### Materi ke 9 Database Commands
+
+List the Tables in Your Database
+db:table –show
+```bash
+php spark db:table --show
+```
+
+Retrieve Some Records
+db:table
+```bash
+php spark db:table komik
+```
+
+Retrieve Field Metadata
+db:table –metadata
+```bash
+php spark db:table my_table --metadata
+```
+### Helpers
+### Materi ke 10. Date Helper
+■ Date Helper berisi fungsi yang membantu bekerja dengan tanggal
+Loading this Helper
+```bash
+<?php
+
+helper('date');
+
+```
+
+Available Function
+Jika zona waktu tidak disediakan, maka akan mengembalikan cap waktu UNIX saat ini dengan time()
+```bash
+<?php
+
+echo now();
+
+```
