@@ -28,7 +28,7 @@
 #### A. Installation
 CodeIgniter memiliki dua metode instalasi yang didukung: pengunduhan manual, atau menggunakan Composer.
 
-● Composer Installation
+Materi ke 1. Composer Installation
 1. Buka terminal (di sini saya menggunakan terminal laragon).
 2. Ketikan perintah berikut : 
 ```bash
@@ -38,7 +38,7 @@ composer create-project codeigniter4/appstarter LatihanCI4Evan
 
 Perintah di atas akan membuat folder LatihanCI4Evan.
 
-● Running Your App
+Materi ke 2. Running Your App
 
 ► Local Development Server
 
@@ -68,7 +68,7 @@ php spark serve --php /usr/bin/php7.6.5.4
 ```
 
 ### C. Build Your First Application
-● Static Pages
+Materi ke 3. Static Pages
 Hal pertama yang akan Anda lakukan adalah menyiapkan routing rules untuk menangani static pages.
 ► Setting Routing Rules
 Routing mengasosiasikan URI dengan controller method. Controller hanyalah sebuah kelas yang membantu mendelegasikan pekerjaan. Kita akan membuat controller nanti.
@@ -173,7 +173,7 @@ Kunjungi localhost:8080/evan untuk menampilkan static pages
 <img width="299" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/57745d19-0419-4a0a-9251-ecd6e81bb318">
 
 ### D. CodeIgniter4 Overview
-Struktur direktori aplikasi pada CodeIgniter adalah sebagai berikut :
+Materi ke 4. Struktur direktori aplikasi pada CodeIgniter adalah sebagai berikut :
 ```bash
 LatihanCI4Evan/
 │
@@ -208,4 +208,11 @@ LatihanCI4Evan/
 ```
 <img width="602" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/91599497-eeaf-44f2-aa7d-d46e5a314969">
 
+### E. Models, Views, and Controllers
+### MVC
+Materi ke 5. MVC adalah sebuah pola arsitektur dalam membuat sebuah aplikasi dengan cara memisahkan kode menjadi tiga bagian yang terdiri dari Model, Views, dan Controller.
+► Model : Tugas model adalah memelihara satu jenis data untuk aplikasi. Data ini bisa berupa pengguna, posting blog, transaksi, dll. Dalam hal ini, tugas model memiliki dua bagian: menerapkan aturan bisnis pada data yang diambil dari, atau dimasukkan ke dalam, basis data; dan menangani penyimpanan dan pengambilan data yang sebenarnya dari basis data.
+► Views : File yang paling sederhana dan biasanya berupa HTML dengan jumlah PHP yang sangat sedikit. PHP yang sederhana, biasanya hanya menampilkan isi variabel, atau looping beberapa item dan menampilkan informasinya dalam sebuah tabel.
+► Controller : Controller memiliki beberapa peran yang berbeda. Yang paling jelas adalah bahwa mereka menerima input dari pengguna dan kemudian menentukan apa yang harus dilakukan dengan input tersebut. Hal ini sering kali melibatkan pengoperan data ke model untuk menyimpannya, atau meminta data dari model yang kemudian diteruskan ke view yang akan ditampilkan. Hal ini juga termasuk memuat kelas utilitas lain, jika diperlukan, untuk menangani tugas-tugas khusus yang berada di luar lingkup model.
 
+Tanggung jawab lain dari controller adalah menangani segala sesuatu yang berhubungan dengan HTTP requests - redirects, authentication, web safety, encoding, dll. 
