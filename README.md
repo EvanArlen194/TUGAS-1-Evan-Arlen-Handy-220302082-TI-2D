@@ -135,12 +135,13 @@ Header berisi kode HTML dasar yang ingin Anda tampilkan sebelum memuat main view
 </body>
 </html>
 ```
-<img width="147" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/4b0857e9-c51d-48e2-ba3a-559bcd5086ac">
+<img width="266" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/1e190a82-b9a5-4769-ad8b-603dc4e550df">
+
 
 ► Adding Logic to the Controller
 Sebelumnya Anda telah menyiapkan controller dengan method view(). Method ini menerima satu parameter, yaitu nama page yang akan dimuat.
 Body static pages akan ditempatkan di direktori app/Views/pages.
-Di dalam direktori tersebut, buatlah dua file bernama home.php dan about.php. Di dalam berkas-berkas tersebut, ketik beberapa teks - apa pun yang Anda inginkan - dan simpan.
+Di dalam direktori tersebut, buatlah dua file bernama evan.php Di dalam berkas-berkas tersebut, ketik beberapa teks - apa pun yang Anda inginkan - dan simpan.
 
 Lalu lengkapi method Pages::view()
 ```bash
@@ -168,6 +169,43 @@ class Pages extends BaseController
 ```
 <img width="463" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/0cfa469e-9c97-4bf9-af2c-3ca1a8d61ad6">
 
+Kunjungi localhost:8080/evan untuk menampilkan static pages
+<img width="299" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/57745d19-0419-4a0a-9251-ecd6e81bb318">
 
+### D. CodeIgniter4 Overview
+Struktur direktori aplikasi pada CodeIgniter adalah sebagai berikut :
+```bash
+LatihanCI4Evan/
+│
+├── app/
+│   ├── Config/               # Konfigurasi aplikasi
+│   ├── Controllers/          # Kontroler
+│   ├── Database/             # File migrasi dan seeds
+│   ├── Filters/              # Filter
+│   ├── Helpers/              # Helper tambahan
+│   ├── Libraries/            # Pustaka tambahan
+│   ├── Locales/              # File terjemahan
+│   ├── Models/               # Model
+│   ├── ThirdParty/           # Pustaka pihak ketiga
+│   └── Views/                # Tampilan
+│
+├── public/                   # Dokumen publik
+│   ├── index.php             # Pintu masuk utama
+│   └── .htaccess             # File konfigurasi server
+│
+├── system/                   # Core CodeIgniter
+│
+├── writable/                 # Direktori untuk data yang dapat ditulis
+│   ├── cache/                # Cache aplikasi
+│   ├── logs/                 # Log aplikasi
+│   └── uploads/              # Direktori upload file
+│
+├── tests/                     # Unit dan fungsional test
+│
+├── composer.json              # Konfigurasi Composer
+├── spark                      # CLI CodeIgniter
+└── phpunit.xml.dist           # Konfigurasi PHPUnit
+```
+<img width="602" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/91599497-eeaf-44f2-aa7d-d46e5a314969">
 
 
