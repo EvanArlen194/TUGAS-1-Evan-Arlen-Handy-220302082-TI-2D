@@ -338,6 +338,7 @@ Anda juga dapat menyimpan nilai konfigurasi Anda dalam file .env dengan pengatur
 ```
 <img width="494" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/f8b11b84-a032-4f9d-a985-0dc62c99dbdd">
 
+### Mulai dari sini saya menggunakan proyek yang berbeda yakni : ProjectCI4
 ### Managing Databases
 ### Materi ke 7. Database Migrations
 ■ Migration adalah fitur di codeigniter 4 yang berfungsi sebagai control version system untuk database,dengan migration mengelola skema database akan lebih rapi dan tertata terutama jika bekerja dalam tim. Anda dapat mengedit fragmen SQL secara manual, namun Anda akan bertanggung jawab untuk memberi tahu developer lain bahwa mereka perlu menjalankannya. Anda juga harus melacak perubahan mana yang perlu dijalankan pada mesin produksi saat Anda deploy.
