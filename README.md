@@ -341,4 +341,111 @@ Anda juga dapat menyimpan nilai konfigurasi Anda dalam file .env dengan pengatur
 ### Managing Databases
 ### Materi ke 7. Database Migrations
 ■ Migration adalah fitur di codeigniter 4 yang berfungsi sebagai control version system untuk database,dengan migration mengelola skema database akan lebih rapi dan tertata terutama jika bekerja dalam tim. Anda dapat mengedit fragmen SQL secara manual, namun Anda akan bertanggung jawab untuk memberi tahu developer lain bahwa mereka perlu menjalankannya. Anda juga harus melacak perubahan mana yang perlu dijalankan pada mesin produksi saat Anda deploy.
+► Create a Migration
+Migration masuk ke direktori app/Database/Migrations/ dan memiliki nama seperti 20240318083000_create_komik.php.
+```bash
+<?php
+#20240318083000_create_komik.php
+namespace App\Database\Migrations;
+
+use CodeIgniter\Database\Migration;
+
+class CreateKomik extends Migration
+{
+    public function up()
+    {
+        $this->forge->addField([
+            'id' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+                'auto_increment' => true,
+            ],
+            'judul' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            'slugh' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            'penulis' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            'penerbit' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            'sampul' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            'created_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'updated_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+        ]);
+        $this->forge->addKey('id', true);
+        $this->forge->createTable('komik');
+    }
+
+    public function down()
+    {
+        $this->forge->dropTable('komik');
+    }
+}
+
+```
+Saat Anda menjalankan perintah 
+```bash 
+php spark migrate #CodeIgniter akan secara otomatis menemukan dan menjalankan migration ini.
+```
+
+► Foreign Keys
+Ketika tabel Anda memiliki Foreign Key, migration sering kali dapat menyebabkan masalah ketika Anda mencoba menghapus tabel dan kolom. Untuk sementara melewati pemeriksaan foreign key saat menjalankan migration, gunakan method disableForeignKeyChecks () dan enableForeignKeyChecks () pada koneksi database.
+```bash
+<?php
+
+namespace App\Database\Migrations;
+
+use CodeIgniter\Database\Migration;
+
+class AddBlog extends Migration
+{
+    public function up()
+    {
+        $this->disableForeignKeyChecks();
+
+        // Your migration rules for adding the blog table would go here..
+
+        $this->enableForeignKeyChecks();
+    }
+
+    public function down()
+    {
+        $this->disableForeignKeyChecks();
+
+        // Your migration rules for dropping the blog table would go here..
+
+        $this->enableForeignKeyChecks();
+    }
+
+    protected function disableForeignKeyChecks()
+    {
+        $this->db->query('SET FOREIGN_KEY_CHECKS=0');
+    }
+
+    protected function enableForeignKeyChecks()
+    {
+        $this->db->query('SET FOREIGN_KEY_CHECKS=1');
+    }
+}
+
+
+```
 
