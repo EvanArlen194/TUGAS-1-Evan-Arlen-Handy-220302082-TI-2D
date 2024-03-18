@@ -110,9 +110,63 @@ class Pages extends BaseController
 
 Anda telah membuat class bernama Pages, dengan method view() yang menerima satu argumen bernama $page.
 
-classs Pages memperluas class BaseController yang memperluas class CodeIgniter\Controller. Ini berarti bahwa class Pages yang baru dapat mengakses method dan properti yang didefinisikan dalam class CodeIgniter\Controller (system/Controller.php).
+class Pages memperluas class BaseController yang memperluas class CodeIgniter\Controller. Ini berarti bahwa class Pages yang baru dapat mengakses method dan properti yang didefinisikan dalam class CodeIgniter\Controller (system/Controller.php).
 
 Controller inilah yang akan menjadi pusat dari setiap permintaan ke aplikasi web Anda. Seperti halnya class PHP lainnya, Anda dapat merujuknya di dalam controller sebagai $this.
+
+► Create View
+Setelah Anda membuat method pertama, sekarang saatnya untuk membuat beberapa pages template dasar. Kita akan membuat dua "view" (pages template) yang berfungsi sebagai footer dan header pages.
+Buat header di app/Views/templates/header.php dan tambahkan kode berikut:
+```bash
+<!doctype html>
+<html>
+<head>
+    <title>Belajar CodeIgniter 4</title>
+</head>
+<body>
+
+    <h1><?= esc($title) ?></h1>
+```
+<img width="280" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/b91a8155-81d5-45b4-baf5-7b8d3a3dce93">
+
+Header berisi kode HTML dasar yang ingin Anda tampilkan sebelum memuat main view, bersama dengan heading. Header juga akan menampilkan variabel $title, yang akan kita definisikan nanti di controller. Sekarang, buatlah footer di app/Views/templates/footer.php yang menyertakan kode berikut:
+```bash
+<em>&copy; 2024</em>
+</body>
+</html>
+```
+<img width="147" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/4b0857e9-c51d-48e2-ba3a-559bcd5086ac">
+
+► Adding Logic to the Controller
+Sebelumnya Anda telah menyiapkan controller dengan method view(). Method ini menerima satu parameter, yaitu nama page yang akan dimuat.
+Body static pages akan ditempatkan di direktori app/Views/pages.
+Di dalam direktori tersebut, buatlah dua file bernama home.php dan about.php. Di dalam berkas-berkas tersebut, ketik beberapa teks - apa pun yang Anda inginkan - dan simpan.
+
+Lalu lengkapi method Pages::view()
+```bash
+<?php
+
+namespace App\Controllers;
+
+use CodeIgniter\Exceptions\PageNotFoundException;
+
+class Pages extends BaseController
+{
+    public function view($page = 'home')
+    {
+        if (! is_file(APPPATH . 'Views/pages/' . $page . '.php')) {
+            throw new PageNotFoundException($page);
+        }
+
+        $data['title'] = ucfirst($page);
+
+        return view('templates/header', $data)
+            . view('pages/' . $page)
+            . view('templates/footer');
+    }
+}
+```
+<img width="463" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/0cfa469e-9c97-4bf9-af2c-3ca1a8d61ad6">
 
 
 
