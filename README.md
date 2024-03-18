@@ -219,7 +219,7 @@ LatihanCI4Evan/
 
 Tanggung jawab lain dari controller adalah menangani segala sesuatu yang berhubungan dengan HTTP requests - redirects, authentication, web safety, encoding, dll. 
 
-### Working with Databases
+### F. Working with Databases
 ### Materi ke 6. Database Configuration
 ►  Setting Default Database
 File konfigurasi terletak di app/Config/Database.php. Anda juga dapat mengatur nilai koneksi basis data di file .env.
@@ -338,7 +338,7 @@ Anda juga dapat menyimpan nilai konfigurasi Anda dalam file .env dengan pengatur
 ```
 <img width="329" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/526cfeee-5582-4aeb-9f62-85a9a5b19398">
 
-### Managing Databases
+### G. Managing Databases
 ### Materi ke 7. Database Migrations
 ■ Migration adalah fitur di codeigniter 4 yang berfungsi sebagai control version system untuk database,dengan migration mengelola skema database akan lebih rapi dan tertata terutama jika bekerja dalam tim. Anda dapat mengedit fragmen SQL secara manual, namun Anda akan bertanggung jawab untuk memberi tahu developer lain bahwa mereka perlu menjalankannya. Anda juga harus melacak perubahan mana yang perlu dijalankan pada mesin produksi saat Anda deploy.
 ► Create a Migration
@@ -574,9 +574,10 @@ db:table –metadata
 ```bash
 php spark db:table my_table --metadata
 ```
-### Helpers
+### H. Helpers
 ### Materi ke 10. Date Helper
 ■ Date Helper berisi fungsi yang membantu bekerja dengan tanggal
+
 Loading this Helper
 ```bash
 <?php
