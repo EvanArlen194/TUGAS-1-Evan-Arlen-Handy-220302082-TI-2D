@@ -89,6 +89,30 @@ $routes->get('/', 'Home::index');
 ```
 <img width="305" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/2f2f2527-2073-436d-85ce-3c6860428763">
 
+Perintah ini mengatakan bahwa setiap permintaan yang masuk tanpa konten apa pun yang ditentukan harus ditangani oleh method index() di dalam controller Home.
+
+► Create Pages Controller
+Buat sebuah file di app/Controllers/Pages.php dengan kode berikut.
+```bash
+<?php
+
+namespace App\Controllers;
+
+class Pages extends BaseController
+{
+    public function view($page = 'home')
+    {
+        // ...
+    }
+}
+```
+<img width="298" alt="image" src="https://github.com/EvanArlen194/TUGAS-1-Evan-Arlen-Handy-220302082-TI-2D/assets/124815888/a25f55df-3a0d-4583-b25e-c823e0b4d12b">
+
+Anda telah membuat class bernama Pages, dengan method view() yang menerima satu argumen bernama $page.
+
+classs Pages memperluas class BaseController yang memperluas class CodeIgniter\Controller. Ini berarti bahwa class Pages yang baru dapat mengakses method dan properti yang didefinisikan dalam class CodeIgniter\Controller (system/Controller.php).
+
+Controller inilah yang akan menjadi pusat dari setiap permintaan ke aplikasi web Anda. Seperti halnya class PHP lainnya, Anda dapat merujuknya di dalam controller sebagai $this.
 
 
 
