@@ -514,3 +514,6 @@ Membuat file migration kerangka di app/Database/Migrations. Secara otomatis mena
 ```bash
 hp spark make:migration <class> [options]
 ```
+
+### Materi ke 8 Database Seeding
+■ Database Seeding adalah cara sederhana untuk menambahkan data ke dalam basis data Anda. Hal ini sangat berguna selama pengembangan di mana Anda perlu mengisi database dengan data sampel yang dapat Anda kembangkan, tetapi tidak terbatas pada hal itu.
